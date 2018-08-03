@@ -8,7 +8,7 @@ require('dotenv').config();
 // small change
 const app = express();
 
-const build = process.env.CDN_URL || `${__dirname}/build`;
+const build = `${__dirname}/build`;
 
 app.use(express.static(build));
 
