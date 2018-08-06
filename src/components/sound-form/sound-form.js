@@ -103,7 +103,7 @@ export default class SoundForm extends React.Component {
           });
         });
     } else { // if I am here, I am focused on the regular text field that wants a user to type a description
-      this.setState({ description: value });
+      this.setState({ title: value });
     }
   }
 
@@ -148,10 +148,10 @@ export default class SoundForm extends React.Component {
           <button onClick={this.clearFile}>Clear File</button>
         </div>
 
-        <label htmlFor="description">Description</label>
+        <label htmlFor="title">Description</label>
         <input 
           type="text"
-          name="description"
+          name="title"
           onChange={ this.handleChange }
         />
         <button type="submit">Upload a File!</button>
