@@ -2,6 +2,13 @@ const renderIf = (test, trueComponent, falseComponent = null) => {
   return test ? trueComponent : falseComponent;
 };
 
+const devLogger = (...args) => {
+  if (process.env.NODE_ENV !== 'production') {
+    return console.log(...args);
+  }
+  return null;
+};
+
 // TODO: cookies not until tomorrow
 
 // I don't think I'm using this
@@ -21,4 +28,4 @@ const cookieFetch = (key) => {
 const cookieDelete = (key) => {
   document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
 };
-export { renderIf, cookieDelete, cookieFetch }; // eslint-disable-line
+export { renderIf, cookieDelete, cookieFetch, devLogger }; // eslint-disable-line
