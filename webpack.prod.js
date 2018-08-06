@@ -8,22 +8,26 @@ const webpackProdConfig = {};
 webpackProdConfig.module = {};
 webpackProdConfig.mode = 'production';
 
+webpackProdConfig.optimization = {
+  minimizer: [
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        compress: {
+          drop_console: true,
+        },
+        output: {
+          comments: false,
+        },
+      },
+    }),
+  ],
+};
 
 webpackProdConfig.plugins = [
   new MiniCssPlugin({
     filename: '[name].[hash].css',
   }),
   new CleanWebpackPlugin(['build']),
-  new UglifyJSPlugin({
-    uglifyOptions: {
-      compress: {
-        drop_console: true,
-      },
-      output: {
-        comments: false,
-      },
-    },
-  }),
 ];
 
 webpackProdConfig.module.rules = [
