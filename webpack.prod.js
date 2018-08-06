@@ -3,6 +3,8 @@ const MiniCssPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const commonConfig = require('./webpack.common');
 
+console.log = () => {};
+
 const webpackProdConfig = {};
 webpackProdConfig.module = {};
 webpackProdConfig.mode = 'production';
