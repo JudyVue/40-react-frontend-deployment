@@ -7,13 +7,10 @@ const webpackProdConfig = {};
 webpackProdConfig.module = {};
 webpackProdConfig.mode = 'production';
 
-const cdn = 'cloudfront-cdn';
-
-// filename: '[name].[hash].css',
 
 webpackProdConfig.plugins = [
   new MiniCssPlugin({
-    filename: `[name].[${cdn}].css`,
+    filename: '[name].[hash].css',
   }),
   new CleanWebpackPlugin(['build']),
 ];

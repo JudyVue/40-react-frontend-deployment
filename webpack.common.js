@@ -11,16 +11,9 @@ webpackConfig.entry = `${__dirname}/src/main.js`;
 
 require('dotenv').config();
 
-const production = process.env.NODE_ENV === 'production';
-
-let hash = 'hash';
-if (production) {
-  hash = 'cloudfront-cdn';
-} 
-
 // filename: '[name].[hash].js',
 webpackConfig.output = {
-  filename: `[name].[${hash}].js`,
+  filename: '[name].[hash].js',
   path: `${__dirname}/build`,
   publicPath: process.env.CDN_URL,
 };
