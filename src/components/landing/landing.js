@@ -31,7 +31,7 @@ class Landing extends React.Component {
   }
   
   handleLogin = (user) => {
-    this.props.userLogin(user)
+    return this.props.userLogin(user)
       .then(() => {
         this.props.history.push(routes.DASHBOARD_ROUTE); 
       })
