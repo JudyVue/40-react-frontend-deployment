@@ -42,6 +42,7 @@ export const logout = () => {
 export const userSignup = user => (store) => {
   return superagent.post(`${API_URL}${routes.SIGNUP_ROUTE}`)
     .send(user)
+    .set({ credentials: 'include' })
     .withCredentials() // The .withCredentials() method enables the ability to send cookies from the origin
     .then((response) => {
       return store.dispatch(setToken(response.body.token)); // this backend API attaches the token on a "text" property of the response object rather than the body through an individual design choice
