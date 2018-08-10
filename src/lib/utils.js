@@ -26,6 +26,8 @@ const cookieFetch = (key) => {
 
 // Standard way to delete a cookie: To delete a cookie, unset its value and pass a date in the past
 const cookieDelete = (key) => {
+  console.log('cookie delete', key)
   document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+  // delete localStorage['app-token'];
 };
 export { renderIf, cookieDelete, cookieFetch, devLogger }; // eslint-disable-line
